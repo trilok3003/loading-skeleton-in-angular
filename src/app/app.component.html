@@ -1,0 +1,36 @@
+<button (click)="onLoad()">load</button>
+<div class="flex">
+  <p>Some data:</p>
+  <p *skeleton="isLoading; 
+                height: '20px'; 
+                width: '200px'">
+     data.foo 
+  </p>
+</div>
+
+
+<section class="flex">
+
+  <ng-container *skeleton="isLoading; 
+                           repeat: 5; 
+                           className: 'mb-2'; 
+                           height: '100px';">
+
+    <div *ngFor="let num of [1,2, 3]">
+      {{ num }}
+    </div>
+
+  </ng-container>
+</section>
+
+<ng-container *skeleton="isLoading; 
+                         repeat: 5; 
+                         className: 'mb-2'; 
+                         height: '30px'; 
+                         width: 'rand'">
+
+  <div *ngFor="let num of [1,2, 3, 4, 5]">
+    {{ num }}
+  </div>
+
+</ng-container>
